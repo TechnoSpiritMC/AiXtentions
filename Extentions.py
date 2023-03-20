@@ -1,4 +1,4 @@
-import os, time
+import os, time, requests
 
 testExtContent = ""
 AiScoresExtContent = ""
@@ -144,3 +144,53 @@ if chaINSign == "c":
 
 
         print(f"{c(100, 100, 100, f'Opération effectuée en {truncate((TimeAfter-TimeBefore), 2)} secondes avec')}{g('succès.')}")
+        
+        
+        
+        
+if chaINSign == "i":
+
+    if a == 5:
+        print(c(100, 100, 100, f"Tentative d'installation de {a} extentions disponnibles..."))
+        time.sleep(1)
+        print(f"{c(100, 100, 100, 'Tentative de téléchargement')}{r('annulée : toutes les extentions sont déjà présentes..')}")
+    else:
+        print(f'{c(100, 100, 100, f"Action en cours:")}{g(f"tentative de téléchargement des {(5 - a)} extentions absentes")}')
+        i = 0
+        TimeBefore = time.time()
+        TestEN = os.path.exists("test.aiext")
+        if not TestEN:
+            r = requests.get(Liens.Test, allow_redirects=True)
+            open('Test.aiext', 'wb').write(r.content)
+
+
+        TestEN = os.path.exists("AiScores.aiext")
+        if not TestEN:
+            r = requests.get(Liens.AiScores, allow_redirects=True)
+            open('AiScores.aiext', 'wb').write(r.content)
+
+
+        TestEN = os.path.exists("AiTrainer.aiext")
+        if not TestEN:
+            r = requests.get(Liens.AiTrainer, allow_redirects=True)
+            open('AiTrainer.aiext', 'wb').write(r.content)
+
+
+        TestEN = os.path.exists("AiGraphs.console.aiext")
+        if not TestEN:
+            r = requests.get(Liens.AiGraphsConsole, allow_redirects=True)
+            open('AiGraphs.console.aiext', 'wb').write(r.content)
+
+
+        TestEN = os.path.exists("AiGraphs.turtle.aiext")
+        if not TestEN:
+            r = requests.get(Liens.AiGraphsTurtle, allow_redirects=True)
+            open('AiGraps.turtle.aiext', 'wb').write(r.content)
+
+        TimeAfter = time.time()
+
+
+
+
+        print(f"{c(100, 100, 100, f'Opération effectuée en {truncate((TimeAfter-TimeBefore), 2)} secondes avec')}{g('succès.')}")
+
