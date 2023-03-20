@@ -7,6 +7,11 @@ AiGraphsCExtContent = ""
 AiGraphsTExtContent = ""
 
 
+def truncate(n, decimals=0):
+    multiplier = 10 ** decimals
+    return int(n * multiplier) / multiplier
+
+
 def c(r, g, b, text):
     return "\033[38;2;{};{};{}m{} \033[38;2;255;255;255m".format(r, g, b, text)
 
@@ -28,7 +33,13 @@ def b(text):
     r = g = 100
     return "\033[38;2;{};{};{}m{} \033[38;2;255;255;255m".format(r, g, b, text)
 
-
+class Liens:
+    AiScores = 'https://gist.githubusercontent.com/TechnoSpiritMC/a54b406837625abac62afee4b108aa18/raw/050337a51be592df4ce70ad2c05f0920f778f260/AiScores.aiext'
+    AiTrainer = 'https://gist.githubusercontent.com/TechnoSpiritMC/c908c04c284c6a875c04e9c776e4e987/raw/ec27d1dc9184722361bb70fd650bcf5d8cd4560b/AiTrainer_Test.aiext'
+    Test = 'https://gist.githubusercontent.com/TechnoSpiritMC/c908c04c284c6a875c04e9c776e4e987/raw/ec27d1dc9184722361bb70fd650bcf5d8cd4560b/AiTrainer_Test.aiext'
+    AiGraphsConsole = 'https://gist.githubusercontent.com/TechnoSpiritMC/ffcf88789709376b763ee69bf5855320/raw/3e3d2dd065257f4e2227a279c5ae73486af3ba47/AiGraphs.console.aiext'
+    AiGraphsTurtle = 'https://gist.githubusercontent.com/TechnoSpiritMC/c477539269bbd27b9af09627bf861273/raw/8dc1bbd88f93f05cf22b146b4afc1d837caaddd9/AiGraphs.turtle.aiext'
+    
 a1 = f"{c(100, 100, 100, 'EXTENTIONS INSTALLÉES:')}"
 a1 = a1 + "\n"
 a = 0
@@ -78,12 +89,12 @@ if TestEN:
 else:
     a1 = a1 + f"{c(100, 100, 100, 'Extention AiGraphs.turtle    : ')}{r('NON')}\n"
 
-a1 = a1 + f"{c(100, 100, 100, f'Que voulez vous faire avec ces {a} extention(s)? Les')}{g('CHARGER (cha)')}{c(100, 100, 100, 'les')}{b('INSTALLER (ins)')}{c(100, 100, 100, 'ou les')}{r('IGNORER (ign)')}"
+a1 = a1 + f"{c(100, 100, 100, f'Que voulez vous faire avec ces {a} extention(s)? Les')}{g('CHARGER (c)')}{c(100, 100, 100, 'les')}{b('INSTALLER (i)')}{c(100, 100, 100, 'ou')}{r('UTILISER CELLES DEJA INSTALLÉES (u)')}"
 a1 = a1 + "\n"
 
 chaINSign = input(a1)
 
-if chaINSign == "cha":
+if chaINSign == "c":
 
     if a == 0:
         print(c(100, 100, 100, f"Tentative d'installation de {a} extentions disponnibles..."))
@@ -132,4 +143,4 @@ if chaINSign == "cha":
 
 
 
-        print(f"{c(100, 100, 100, f'Opération effectuée en {round((TimeAfter-TimeBefore))} secondes avec')}{g('succès.')}")
+        print(f"{c(100, 100, 100, f'Opération effectuée en {truncate((TimeAfter-TimeBefore), 2)} secondes avec')}{g('succès.')}")
