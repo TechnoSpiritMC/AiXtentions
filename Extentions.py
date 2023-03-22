@@ -1,4 +1,4 @@
-import os, time, requests
+import os, time, requests, sys
 
 testExtContent = ""
 AiScoresExtContent = ""
@@ -33,13 +33,15 @@ def b(text):
     r = g = 100
     return "\033[38;2;{};{};{}m{} \033[38;2;255;255;255m".format(r, g, b, text)
 
+
 class Liens:
     AiScores = 'https://gist.githubusercontent.com/TechnoSpiritMC/a54b406837625abac62afee4b108aa18/raw/050337a51be592df4ce70ad2c05f0920f778f260/AiScores.aiext'
     AiTrainer = 'https://gist.githubusercontent.com/TechnoSpiritMC/c908c04c284c6a875c04e9c776e4e987/raw/ec27d1dc9184722361bb70fd650bcf5d8cd4560b/AiTrainer_Test.aiext'
     Test = 'https://gist.githubusercontent.com/TechnoSpiritMC/c908c04c284c6a875c04e9c776e4e987/raw/ec27d1dc9184722361bb70fd650bcf5d8cd4560b/AiTrainer_Test.aiext'
     AiGraphsConsole = 'https://gist.githubusercontent.com/TechnoSpiritMC/ffcf88789709376b763ee69bf5855320/raw/3e3d2dd065257f4e2227a279c5ae73486af3ba47/AiGraphs.console.aiext'
     AiGraphsTurtle = 'https://gist.githubusercontent.com/TechnoSpiritMC/c477539269bbd27b9af09627bf861273/raw/8dc1bbd88f93f05cf22b146b4afc1d837caaddd9/AiGraphs.turtle.aiext'
-    
+
+
 a1 = f"{c(100, 100, 100, 'EXTENTIONS INSTALLÉES:')}"
 a1 = a1 + "\n"
 a = 0
@@ -106,120 +108,113 @@ if chaINSign == "c":
         TimeBefore = time.time()
         TestEN = os.path.exists("Test.aiext")
         if TestEN:
+            sys.stdout.write(c(50, 50, 255, "\r20% - __") + c(50, 50, 50, "________"))
             with open("test.py", "w") as testWrite:
                 testWrite.write(testExtContent)
                 testC = 1
 
-
         TestEN = os.path.exists("AiScores.aiext")
         if TestEN:
+            sys.stdout.write(c(200, 75, 200, "\r40% - ____") + c(50, 50, 50, "______"))
             with open("AiScores.py", "w") as testWrite:
                 testWrite.write(AiScoresExtContent)
                 AiScoresC = 1
 
-
         TestEN = os.path.exists("AiTrainer.aiext")
         if TestEN:
+            sys.stdout.write(c(200, 75, 75, "\r60% - ______") + c(50, 50, 50, "____"))
             with open("AiTrainer.py", "w") as testWrite:
                 testWrite.write(AiTrainerExtContent)
                 AiTrainerC = 1
 
-
         TestEN = os.path.exists("AiGraphs.console.aiext")
         if TestEN:
+            sys.stdout.write(c(200, 175, 75, "\r80% - ________") + c(50, 50, 50, "__"))
             with open("AiGraphs.console.py", "w") as testWrite:
                 testWrite.write(AiGraphsCExtContent)
                 AiGraphsCC = 1
 
-
         TestEN = os.path.exists("AiGraphs.turtle.aiext")
         if TestEN:
+            sys.stdout.write(c(75, 200, 75, "\r100% - __________") + c(50, 50, 50, ""))
             with open("AiGraphs.turtle.py", "w") as testWrite:
                 testWrite.write(AiGraphsTExtContent)
                 AiGraphsTC = 1
 
         TimeAfter = time.time()
 
+        print(
+            f"{c(100, 100, 100, f'Opération effectuée en {truncate((TimeAfter - TimeBefore), 2)} secondes avec')}{g('succès.')}")
 
-
-
-        print(f"{c(100, 100, 100, f'Opération effectuée en {truncate((TimeAfter-TimeBefore), 2)} secondes avec')}{g('succès.')}")
-        
-        
-        
-        
 if chaINSign == "i":
-  f = 0
-  TestEN = os.path.exists("Test.py")
-  if TestEN:
-    f = f + 1  
-    print("Test")
+    f = 0
+    TestEN = os.path.exists("Test.aiext")
+    if TestEN:
+        f = f + 1
+        print("Test")
 
+    TestEN = os.path.exists("AiScores.aiext")
+    if TestEN:
+        f = f + 1
+        print("AiS")
 
-  TestEN = os.path.exists("AiScores.py")
-  if TestEN:
-    f = f + 1
-    print("AiS")
+    TestEN = os.path.exists("AiTrainer.aiext")
+    if TestEN:
+        f = f + 1
+        print("Ait")
 
+    TestEN = os.path.exists("AiGraphs.console.aiext")
+    if TestEN:
+        f = f + 1
+        print("AiGC")
 
-  TestEN = os.path.exists("AiTrainer.py")
-  if TestEN:
-    f = f + 1
-    print("Ait")
+    TestEN = os.path.exists("AiGraphs.turtle.aiext")
+    if TestEN:
+        f = f + 1
+    print(f)
 
-
-  TestEN = os.path.exists("AiGraphs.console.py")
-  if TestEN:
-    f = f + 1
-    print("AiGC")
-
-
-  TestEN = os.path.exists("AiGraphs.turtle.py")
-  if TestEN:
-    f = f + 1
-  print(f)
-
-  if f == 5:
+    if f == 5:
         print(c(100, 100, 100, f"Tentative d'installation de {a} extentions disponnibles..."))
         time.sleep(1)
-        print(f"{c(100, 100, 100, 'Tentative de téléchargement')}{r('annulée : toutes les extentions sont déjà présentes..')}")
-  
-  else:
-        print(f'{c(100, 100, 100, f"Action en cours:")}{g(f"tentative de téléchargement des {(5 - f)} extentions absentes")}')
+        print(
+            f"{c(100, 100, 100, 'Tentative de téléchargement')}{r('annulée : toutes les extentions sont déjà présentes..')}")
+
+    else:
+        print(
+            f'{c(100, 100, 100, f"Action en cours:")}{g(f"tentative de téléchargement des {(5 - f)} extentions absentes")}')
         i = 0
         TimeBefore = time.time()
-        TestEN = os.path.exists("Test.py")
+        TestEN = os.path.exists("Test.aiext")
         if not TestEN:
+            sys.stdout.write(c(50, 50, 255, "\r20% - __") + c(50, 50, 50, "________"))
             r = requests.get(Liens.Test, allow_redirects=True)
             open('Test.aiext', 'wb').write(r.content)
 
-
-        TestEN = os.path.exists("AiScores.py")
+        TestEN = os.path.exists("AiScores.aiext")
         if not TestEN:
+            sys.stdout.write(c(200, 75, 200, "\r40% - ____") + c(50, 50, 50, "______"))
             r = requests.get(Liens.AiScores, allow_redirects=True)
             open('AiScores.aiext', 'wb').write(r.content)
 
-
-        TestEN = os.path.exists("AiTrainer.py")
+        TestEN = os.path.exists("AiTrainer.aiext")
         if not TestEN:
+            sys.stdout.write(c(200, 75, 75, "\r60% - ______") + c(50, 50, 50, "____"))
             r = requests.get(Liens.AiTrainer, allow_redirects=True)
             open('AiTrainer.aiext', 'wb').write(r.content)
 
-
         TestEN = os.path.exists("AiGraphs.console.aiext")
         if not TestEN:
+            sys.stdout.write(c(200, 175, 75, "\r80% - ________") + c(50, 50, 50, "__"))
             r = requests.get(Liens.AiGraphsConsole, allow_redirects=True)
             open('AiGraphs.console.aiext', 'wb').write(r.content)
 
-
-        TestEN = os.path.exists("AiGraphs.turtle.py")
+        TestEN = os.path.exists("AiGraphs.turtle.aiext")
         if not TestEN:
+            sys.stdout.write(c(75, 200, 75, "\r100% - __________") + c(50, 50, 50, ""))
             r = requests.get(Liens.AiGraphsTurtle, allow_redirects=True)
             open('AiGraphs.turtle.aiext', 'wb').write(r.content)
 
         TimeAfter = time.time()
 
-
-
-
-        print(f"{c(100, 100, 100, f'Opération effectuée en {truncate((TimeAfter-TimeBefore), 2)} secondes avec')}{g('succès.')}")
+        print(
+            f"{c(100, 100, 100, f'Opération effectuée en {truncate((TimeAfter - TimeBefore), 5)} secondes avec')}{g('succès.')}")
