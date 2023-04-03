@@ -1,5 +1,6 @@
-import os, time, requests, sys
+import os, time, requests, sys, keyboard
 
+Exit = 0
 testExtContent = ""
 AiScoresExtContent = ""
 AiTrainerExtContent = ""
@@ -91,55 +92,137 @@ if TestEN:
 else:
     a1 = a1 + f"{c(100, 100, 100, 'Extention AiGraphs.turtle    : ')}{r('NON')}\n"
 
-a1 = a1 + f"{c(100, 100, 100, f'Que voulez vous faire avec ces {a} extention(s)? Les')}{g('CHARGER (c)')}{c(100, 100, 100, 'les')}{b('INSTALLER (i)')}{c(100, 100, 100, 'ou')}{r('UTILISER CELLES DEJA INSTALLÉES (u)')}"
-a1 = a1 + "\n"
+print(a1)
+sys.stdout.write("\rPour séléctionner, appuyez sur la touche [→] ou [←]. Puis, une fois votre choix effectué, faites [Entrée].")
 
-chaINSign = input(a1)
+
+Line = 2
+
+one = f"{r('Charger')} | {c(200, 200, 255, 'Installer')} | {c(200, 255, 200, 'Utiliser les extentions actuelles')}"
+two = f"{c(255, 200, 200, 'Charger')} | {b('Installer')} | {c(200, 255, 200, 'Utiliser les extentions actuelles')}"
+three = f"{c(255, 200, 200, 'Charger')} | {c(200, 200, 255, 'Installer')} | {g('Utiliser les extentions actuelles')}"
+
+
+def linePrint(LineInt=1, TmpDown=0, TmpUp=0):
+    if LineInt == 1:
+        sys.stdout.write(f"\r{one}")
+    if LineInt == 2:
+        sys.stdout.write(f"\r{two}")
+    if LineInt == 3:
+        sys.stdout.write(f"\r{three}")
+
+
+time.sleep(3)
+
+
+
+
+
+
+
+Down = 0
+Up = 0
+
+_Down = 0
+_Up = 0
+Line = 1
+linePrint(1, _Down, _Up)
+while Exit != 1:
+    if keyboard.is_pressed("Left"):
+        Up = 1
+        _Up = 1
+
+    if _Up != Up:
+        if Line == 1:
+            Line = 3
+        else:
+            Line = Line - 1
+        linePrint(Line, _Down, _Up)
+        _Up = 0
+
+    if keyboard.is_pressed("Right"):
+        Down = 1
+        _Down = 1
+
+    if _Down != Down:
+        if Line == 3:
+            Line = 1
+        else:
+            Line = Line + 1
+        linePrint(Line, _Down, _Up)
+        _Down = 0
+
+    if not keyboard.is_pressed("z"):
+        Up = 0
+
+    if not keyboard.is_pressed("s"):
+        Down = 0
+
+    if keyboard.is_pressed("Return"):
+        Exit = 1
+
+
+
+if Line == 1:
+    chaINSign = "c"
+
+if Line == 2:
+    chaINSign = "i"
+
+if Line == 3:
+    sys.stdout.write("\rVous avez choisi: Télécharger")
 
 if chaINSign == "c":
 
     if a == 0:
-        print(c(100, 100, 100, f"Tentative d'installation de {a} extentions disponnibles..."))
+        print(c(100, 100, 100, f"\rTentative d'installation de {a} extentions disponnibles..."))
         time.sleep(1)
         print(f"{c(100, 100, 100, 'Tentative de chargement')}{r('infructueuse : aucune extention n est installée.')}")
+        exit(925)
     else:
-        print(f'{c(100, 100, 100, f"Action en cours:")}{g(f"tentative de chargement des {a} extentions disponnibles")}')
+        print(f'\r{c(100, 100, 100, f"Action en cours:")}{g(f"tentative de chargement des {a} extentions disponnibles")}')
         i = 0
         TimeBefore = time.time()
         TestEN = os.path.exists("Test.aiext")
+        sys.stdout.write(c(255, 255, 255, "\r00% - ") + c(50, 50, 50, "__________"))
         if TestEN:
-            sys.stdout.write(c(50, 50, 255, "\r20% - __") + c(50, 50, 50, "________"))
+
             with open("test.py", "w") as testWrite:
                 testWrite.write(testExtContent)
                 testC = 1
+                sys.stdout.write(c(50, 50, 255, "\r20% - __") + c(50, 50, 50, "________"))
 
         TestEN = os.path.exists("AiScores.aiext")
         if TestEN:
-            sys.stdout.write(c(200, 75, 200, "\r40% - ____") + c(50, 50, 50, "______"))
+
             with open("AiScores.py", "w") as testWrite:
                 testWrite.write(AiScoresExtContent)
                 AiScoresC = 1
+                sys.stdout.write(c(200, 75, 200, "\r40% - ____") + c(50, 50, 50, "______"))
 
         TestEN = os.path.exists("AiTrainer.aiext")
         if TestEN:
-            sys.stdout.write(c(200, 75, 75, "\r60% - ______") + c(50, 50, 50, "____"))
+
             with open("AiTrainer.py", "w") as testWrite:
                 testWrite.write(AiTrainerExtContent)
                 AiTrainerC = 1
+                sys.stdout.write(c(200, 75, 75, "\r60% - ______") + c(50, 50, 50, "____"))
 
         TestEN = os.path.exists("AiGraphs.console.aiext")
         if TestEN:
-            sys.stdout.write(c(200, 175, 75, "\r80% - ________") + c(50, 50, 50, "__"))
+
             with open("AiGraphs.console.py", "w") as testWrite:
                 testWrite.write(AiGraphsCExtContent)
                 AiGraphsCC = 1
+                sys.stdout.write(c(200, 175, 75, "\r80% - ________") + c(50, 50, 50, "__"))
 
         TestEN = os.path.exists("AiGraphs.turtle.aiext")
         if TestEN:
-            sys.stdout.write(c(75, 200, 75, "\r100% - __________") + c(50, 50, 50, ""))
+
             with open("AiGraphs.turtle.py", "w") as testWrite:
                 testWrite.write(AiGraphsTExtContent)
                 AiGraphsTC = 1
+                sys.stdout.write(c(75, 200, 75, "\r100% - __________") + c(50, 50, 50, ""))
 
         TimeAfter = time.time()
 
@@ -151,68 +234,68 @@ if chaINSign == "i":
     TestEN = os.path.exists("Test.aiext")
     if TestEN:
         f = f + 1
-        print("Test")
 
     TestEN = os.path.exists("AiScores.aiext")
     if TestEN:
         f = f + 1
-        print("AiS")
 
     TestEN = os.path.exists("AiTrainer.aiext")
     if TestEN:
         f = f + 1
-        print("Ait")
 
     TestEN = os.path.exists("AiGraphs.console.aiext")
     if TestEN:
         f = f + 1
-        print("AiGC")
 
     TestEN = os.path.exists("AiGraphs.turtle.aiext")
     if TestEN:
         f = f + 1
-    print(f)
 
     if f == 5:
-        print(c(100, 100, 100, f"Tentative d'installation de {a} extentions disponnibles..."))
+        print(c(100, 100, 100, f"\rTentative d'installation de {a} extentions disponnibles..."))
         time.sleep(1)
         print(
-            f"{c(100, 100, 100, 'Tentative de téléchargement')}{r('annulée : toutes les extentions sont déjà présentes..')}")
+            f"\r{c(100, 100, 100, 'Tentative de téléchargement')}{r('annulée : toutes les extentions sont déjà présentes..')}")
 
     else:
         print(
-            f'{c(100, 100, 100, f"Action en cours:")}{g(f"tentative de téléchargement des {(5 - f)} extentions absentes")}')
+            f'\r{c(100, 100, 100, f"Action en cours:")}{g(f"tentative de téléchargement des {(5 - f)} extentions absentes")}')
         i = 0
         TimeBefore = time.time()
+        sys.stdout.write(c(255, 255, 255, "\r00% - ") + c(50, 50, 50, "__________"))
         TestEN = os.path.exists("Test.aiext")
         if not TestEN:
-            sys.stdout.write(c(50, 50, 255, "\r20% - __") + c(50, 50, 50, "________"))
             r = requests.get(Liens.Test, allow_redirects=True)
             open('Test.aiext', 'wb').write(r.content)
+            sys.stdout.write(c(50, 50, 255, "\r20% - __") + c(50, 50, 50, "________"))
 
         TestEN = os.path.exists("AiScores.aiext")
         if not TestEN:
-            sys.stdout.write(c(200, 75, 200, "\r40% - ____") + c(50, 50, 50, "______"))
+
             r = requests.get(Liens.AiScores, allow_redirects=True)
             open('AiScores.aiext', 'wb').write(r.content)
+            sys.stdout.write(c(200, 75, 200, "\r40% - ____") + c(50, 50, 50, "______"))
 
         TestEN = os.path.exists("AiTrainer.aiext")
         if not TestEN:
-            sys.stdout.write(c(200, 75, 75, "\r60% - ______") + c(50, 50, 50, "____"))
+
             r = requests.get(Liens.AiTrainer, allow_redirects=True)
             open('AiTrainer.aiext', 'wb').write(r.content)
+            sys.stdout.write(c(200, 75, 75, "\r60% - ______") + c(50, 50, 50, "____"))
 
         TestEN = os.path.exists("AiGraphs.console.aiext")
         if not TestEN:
-            sys.stdout.write(c(200, 175, 75, "\r80% - ________") + c(50, 50, 50, "__"))
+
             r = requests.get(Liens.AiGraphsConsole, allow_redirects=True)
             open('AiGraphs.console.aiext', 'wb').write(r.content)
+            sys.stdout.write(c(200, 175, 75, "\r80% - ________") + c(50, 50, 50, "__"))
 
         TestEN = os.path.exists("AiGraphs.turtle.aiext")
         if not TestEN:
-            sys.stdout.write(c(75, 200, 75, "\r100% - __________") + c(50, 50, 50, ""))
+
             r = requests.get(Liens.AiGraphsTurtle, allow_redirects=True)
             open('AiGraphs.turtle.aiext', 'wb').write(r.content)
+            sys.stdout.write(c(75, 200, 75, "\r100% - __________") + c(50, 50, 50, ""))
 
         TimeAfter = time.time()
 
