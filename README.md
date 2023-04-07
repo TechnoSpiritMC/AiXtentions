@@ -77,6 +77,14 @@ Puis, le programme va demander votre nom:
  - Traits d'union 
  - Et tout autre symbole n'étant pas une lettre minuscule ou majuscule.
 
-`Voici l'identifiant de votre contrôle. Vous devez l'inclure sur votre policopié. Doit être copié exactement :  Aeovaex-25.0+368`
+Puis, le programme va composer l'ID unique pour votre contrôle. Voici un exemple d'ID qui peut être généré:
+`Aeovaex-25.0+368`.
 
+## Entrer une note
+Pour entrer une note, lors du démarrage du programme, écrivez sur votre clavier `entrer`, puis, faites `[ENTRÉE]`. Attention, le mot entrer n'est **pas** obligé d'avoir l'orthographe exacte. Il **peut** être écrit "ajt". 
 
+Une fois fait, le programme va vous demander:
+L'`Id de l'évaluation`. Il vous faut alors entrer l'ID du contrôle, noté (normalement) en haut de votre copie. Il doit ressembler à quelque chose comme ça : `Abcdefg-25.3+349`. Pour l'
+
+Puis, le programme va demander votre nom:
+`Merci d'entrer votre nom sans le Mr/Mme (Desjardins)`. Il sera utilisé pour être formaté dans l'id du contrôle, et, sera affiché lors de l'ajour d'une note par un élève. Pour l'exemple, j'ai mis "Quelqun". Attention, merci de ne pas mettre dans votre nom les caractères énumérés dans la liste suivante:
