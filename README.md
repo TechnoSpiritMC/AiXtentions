@@ -7,12 +7,12 @@ AiScores est un programme de **calcul**, de **statistiques,** de **conversion**,
 Tout d'abord, il faut télécharger un programme de gestion des installations, décompilations, et mises à jour automatiques de AiScoires et de ses annexes.
 *Il y a deux versions : une qui peut être exécutée de n'importe où, et une autre seulement depuis un IDE installé sur le PC.*
 
-Version exécutable partout [COPIER](https://raw.githubusercontent.com/TechnoSpiritMC/AiXtentions/main/ExtentionsLtrs.py?token=GHSAT0AAAAAACAAMGMDHMCSYYMS65WANRNWZBP25FQ)     *python 3.2 ou supérieur, dernière version : 1.0*
+Version exécutable partout [COPIER](https://raw.githubusercontent.com/TechnoSpiritMC/AiXtentions/main/ExtentionsLtrs.py?token=GHSAT0AAAAAACAAMGMDHMCSYYMS65WANRNWZBP25FQ)     *python 3.2 ou supérieur, dernière version : 1.0*\
 Version exécutable via IDE [COPIER](https://raw.githubusercontent.com/TechnoSpiritMC/AiXtentions/main/ExtentionsArrws.py?token=GHSAT0AAAAAACAAMGMDQ4F2GPXSRL2TEMF4ZBP26BA)     *python 3.2 ou supérieur, dernière version : 1.0.2*
 
 ## Installer l'extension AiScores
 
-Une fois installé, le programme doit être exécuté. Une fuis lancé, il va vous proposer un menu:
+Une fois installé, le programme doit être exécuté. Une fois lancé, il va vous proposer un menu:
 
     EXTENTIONS INSTALLÉES: 
     Extention de test            :  NON 
@@ -53,9 +53,9 @@ Maintenant, cherchez dans vos fichiers, vous devez avoir un fichier qui ressembl
 
 Lancez le programme. Il va vous dire `Faites entrée pour rentrer dans le programme.`, il faut faire entrée sauf si vous voulez avoir des informations complémentaires sur le programme, notamment sur sa version. *Cette fonctionnalité sera ajoutée dans une prochaine mise à jour du programme*.
 
-Commandes:
-`AiScores -i version`           -> savoir la version du programme.
-`AiScores -iL version`         -> savoir la dernière version disponible du programme
+Commandes:\
+`AiScores -i version`           -> savoir la version du programme.\
+`AiScores -iL version`         -> savoir la dernière version disponible du programme.\
 `AiScores -u <param>`			 -> mettre à jour votre programme manuellement (*"param" doit être remplacé par: soit "official" pour obtenir une version complète, ou alors "snapshot" pour obtenir la dernière version, mais qui peut contenir des erreurs*.
 
 Si vous voulez ignorer cette étape, faites juste `[ENTRÉE]`. Le programme va ensuite vous dire ceci:
@@ -71,20 +71,25 @@ Une fois fait, le programme va vous demander:
 Puis, le programme va demander votre nom:
 `Merci d'entrer votre nom sans le Mr/Mme (Desjardins)`. Il sera utilisé pour être formaté dans l'id du contrôle, et, sera affiché lors de l'ajour d'une note par un élève. Pour l'exemple, j'ai mis "Quelqun". Attention, merci de ne pas mettre dans votre nom les caractères énumérés dans la liste suivante:
 
- - Nombres 
- - Caractères spéciaux 
- - Espaces 
- - Traits d'union 
- - Et tout autre symbole n'étant pas une lettre minuscule ou majuscule.
+ \- Nombres\
+ \- Caractères spéciaux\
+ \- Espaces\
+ \- Traits d'union\
+ \- Et tout autre symbole n'étant pas une lettre minuscule ou majuscule.
+
+
 
 Puis, le programme va composer l'ID unique pour votre contrôle. Voici un exemple d'ID qui peut être généré:
 `Aeovaex-25.0+368`.
+
+### Cas spéciaux:
+Il existe des arrangements de lettres qui peuvent former des mots familiers, insultants, et autres mots indésirables. Ces D sont bloqués automatiquement.
 
 ## Entrer une note
 Pour entrer une note, lors du démarrage du programme, écrivez sur votre clavier `entrer`, puis, faites `[ENTRÉE]`. Attention, le mot entrer n'est **pas** obligé d'avoir l'orthographe exacte. Il **peut** être écrit "ent :)". 
 
 Une fois fait, le programme va vous demander:
-L'`Id de l'évaluation`. Il vous faut alors entrer l'ID du contrôle, noté (normalement) en haut de votre copie. Il doit ressembler à quelque chose comme ça : `Abcdefg-25.3+349`. Pour l'
+L'`Id de l'évaluation`. Il vous faut alors entrer l'ID du contrôle, noté (normalement) en haut de votre copie. Il doit ressembler à quelque chose comme ça : `Abcdefg-25.3+349`. Attention, l'ID doit être copié au **symbole près**.
 
 Puis, le programme va demander votre nom:
-`Merci d'entrer votre nom sans le Mr/Mme (Desjardins)`. Il sera utilisé pour être formaté dans l'id du contrôle, et, sera affiché lors de l'ajour d'une note par un élève. Pour l'exemple, j'ai mis "Quelqun". Attention, merci de ne pas mettre dans votre nom les caractères énumérés dans la liste suivante:
+`Merci d'entrer votre nom sans le Mr/Mme (Desjardins)`. Il sera utilisé pour être formaté dans l'ID du contrôle, et, sera affiché lors de l'ajour d'une note par un élève. Pour l'exemple, j'ai mis "Quelqun". Attention, merci de ne pas mettre dans votre nom les caractères énumérés dans la liste suivante:
