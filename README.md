@@ -2,6 +2,9 @@
 AiScores est un programme de **calcul**, de **statistiques,** de **conversion**, et de 
 **partage** de notes.
 
+# AiGraphs
+AiGraphs es un programme de **graphiques** et de **statistiques** sur des notes.
+
 ## Comment utiliser?
 
 Tout d'abord, il faut télécharger un programme de gestion des installations, décompilations, et mises à jour automatiques de AiScoires et de ses annexes.
@@ -10,7 +13,7 @@ Tout d'abord, il faut télécharger un programme de gestion des installations, d
 Version exécutable partout [COPIER](https://raw.githubusercontent.com/TechnoSpiritMC/AiXtentions/main/ExtentionsLtrs.py?token=GHSAT0AAAAAACAAMGMDHMCSYYMS65WANRNWZBP25FQ)     *python 3.2 minimum, python 3.10 recommandé, dernière version : 1.0*\
 Version exécutable via IDE [COPIER](https://raw.githubusercontent.com/TechnoSpiritMC/AiXtentions/main/ExtentionsArrws.py?token=GHSAT0AAAAAACAAMGMDQ4F2GPXSRL2TEMF4ZBP26BA)     *python 3.2 minimum, python 3.10 recommandé dernière version : 1.0.2*
 
-## Installer l'extension AiScores
+## Installer l'extension AiScores et/ou AiGraphs
 
 Une fois installé, le programme doit être exécuté. Une fois lancé, il va vous proposer un menu:
 
@@ -49,7 +52,7 @@ Le temps indiqué (`Opération effectuée en `**0,0**` secondes`) peut changer s
 
 Maintenant, cherchez dans vos fichiers, vous devez avoir un fichier qui ressemble à cela: `AiScores.py`
 
-## AiScores
+# AiScores
 
 Lancez le programme. Il va vous dire `Faites entrée pour rentrer dans le programme.`, il faut faire entrée sauf si vous voulez avoir des informations complémentaires sur le programme, notamment sur sa version. *Cette fonctionnalité sera ajoutée dans une prochaine mise à jour du programme*.
 
@@ -108,6 +111,19 @@ Une fois votre note rentrée, le programme va automatiquement vous la convertir 
      : 42.4 % du contrôle 
 Attention, votre note **peut** être un nombre à virgule (19.25). Cependant, la virgule doit être remplacée par un point. Mais ne peut pas être une fraction (1925/100).
 
+### Note imporante:
+Pour l'instant, AiScores ne marche seulement avec les ID. Les parties 
+- moyennes
+- statistiques
+- parage
+
+ne sont pas disponibles. Seulement la partie calcul l'est.
+
+# AiGraphs
+Il existe deux versions de AiGraphs. Une, `AiGraphs.turtle`, qui doit être exécutée sur VSC ou sur tout autre IDE. Et l'autre, `AiGraphs.console`, peut être exécutée de n'importe ou.
+
+Pou l'instant, ce programme est sous "développement intensif", donc indisponible au public.
+
 # Résolution de prolemmes fréquents:
 
 ## AiXtentions
@@ -150,6 +166,10 @@ Cette erreur arrive lors que l'ID ne respecte pas le format obligatoire, mais po
 `456` est l'ID d'ID (utilisé pour que un professeur puisse créer plusieurs contrôles avec la même note maximale).
 
 Si un des séparateurs (`-` et/ou `+`) n'est pas présent, alors le programme va sortir cette erreur.
+
+Si une erreur non listée dans cette catégorie apparait, merci de contacter contactaiscores@gmail.com.
+
+
 
 
 
